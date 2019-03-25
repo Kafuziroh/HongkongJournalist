@@ -1,6 +1,7 @@
 //从键盘读取数据
 #include <iostream>
 using namespace std;
+extern int SIZE_OF_ARRAY; //全局数组大小
 
 double* ReadFromKeyboard()
 {
@@ -35,6 +36,7 @@ RESETMARK1: //数据错误重置位置
 		cout << "数据个数大于100，请通过文件输入需要排序的数据个数：";
 		goto RESETMARK1;
 	}
+	SIZE_OF_ARRAY = arrayNum; //设置数组大小
 	cout << "请输入需要排序的数据，以半角空格分隔，回车确认：" << endl;
 	double *origArray = new double[arrayNum]; //传递用数据数组
 	for (int i = 0; i < arrayNum; i++) {
