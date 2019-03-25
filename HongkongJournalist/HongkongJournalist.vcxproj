@@ -115,11 +115,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FastSort.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="ReaderFromKeyboard.cpp" />
     <ClCompile Include="ReaderFromFiles.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FastSort.h" />
     <ClInclude Include="ReaderFromFiles.h" />
     <ClInclude Include="ReaderFromKeyboard.h" />
   </ItemGroup>
