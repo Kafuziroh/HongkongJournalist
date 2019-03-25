@@ -15,8 +15,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="ReaderFromKeyboard.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ReaderFromFiles.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ReaderFromKeyboard.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ReaderFromFiles.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
