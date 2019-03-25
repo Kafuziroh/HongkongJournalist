@@ -4,9 +4,11 @@ using namespace std;
 
 double* ReadFromKeyboard()
 {
+	cout << "========================================" << endl;
 	cout << "===============从键盘读入===============" << endl;
+	cout << "========================================" << endl;
 	cout << "请输入需要排序的数据个数，回车确认：";
-	RESETMARK1: //数据错误重置位置
+RESETMARK1: //数据错误重置位置
 	int arrayNum = 0; //数据个数
 	cin >> arrayNum;
 	if (arrayNum == 0)
