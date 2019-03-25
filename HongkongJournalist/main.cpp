@@ -80,14 +80,12 @@ RESETMARK0: //数据错误重置位置
 	{
 		arrTemp[i] = arr[i];
 	}
-	TimeData fastSort = FastSort(arrTemp, SIZE_OF_ARRAY);
 
 	cout << "双路快速排序中..." << endl;
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
 	{
 		arrTemp[i] = arr[i];
 	}
-	TimeData twoWayQuickSort = quicksort(arrTemp, SIZE_OF_ARRAY);
 
 	cout << "SHELL排序中..." << endl;
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)

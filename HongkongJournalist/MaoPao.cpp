@@ -1,14 +1,13 @@
 //冒泡排序
-#include<iostream>
-#include<Windows.h>
-#include"TimeData.h"
-
+#include <iostream>
+#include <Windows.h>
+#include "TimeData.h"
 using namespace std;
 extern int SIZE_OF_ARRAY;
-int sum = 0;
 
 TimeData MaoPao(double str[], int len)
 {
+	int sum = 0;
 	double run_time;
 	_LARGE_INTEGER time_start; //开始时间
 	_LARGE_INTEGER time_over; //结束时间

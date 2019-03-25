@@ -127,6 +127,7 @@
     <ClCompile Include="ReaderFromFiles.cpp" />
     <ClCompile Include="Shell.cpp" />
     <ClCompile Include="ShuangXiangKuaiPai.cpp" />
+    <ClCompile Include="TimeData.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChaRu.h" />

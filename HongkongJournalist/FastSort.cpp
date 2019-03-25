@@ -1,5 +1,4 @@
 //快速排序
-//张承扬
 #include <iostream>
 #include <algorithm>
 #include <windows.h>
@@ -49,7 +48,7 @@ TimeData FastSort(double arr[], int n)
 
 	QueryPerformanceCounter(&time_over); //计时结束
 	run_time = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq; //乘以1000000把单位由秒化为微秒，精度为1000000/（CPU主频）微秒
-	
+
 	TimeData a("快速排序", run_time, TS); //方法名称，所用时间，排序趟数
 	return a;
 }

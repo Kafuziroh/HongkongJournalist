@@ -1,4 +1,3 @@
 //≤Â»Î∑®≈≈–Ú
-//—Ó≥˛Â≠
-#include"TimeData.h"
-TimeData ChaRu(double str[],int len);
+#include "TimeData.h"
+TimeData ChaRu(double str[], int len);
