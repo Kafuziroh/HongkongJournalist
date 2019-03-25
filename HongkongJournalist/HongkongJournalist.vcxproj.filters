@@ -30,6 +30,21 @@
     <ClCompile Include="DataCollection.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="MaoPao.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ShuangXiangKuaiPai.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Shell.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ErFeng.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChaRu.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ReaderFromKeyboard.h">
@@ -45,6 +60,21 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="TimeData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MaoPao.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChaRu.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ErFeng.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Shell.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ShuangXiangKuaiPai.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
