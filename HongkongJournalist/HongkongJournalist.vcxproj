@@ -116,15 +116,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DataCollection.cpp" />
     <ClCompile Include="FastSort.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="ReaderFromKeyboard.cpp" />
     <ClCompile Include="ReaderFromFiles.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DataCollection.h" />
     <ClInclude Include="FastSort.h" />
     <ClInclude Include="ReaderFromFiles.h" />
     <ClInclude Include="ReaderFromKeyboard.h" />
+    <ClInclude Include="TimeData.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

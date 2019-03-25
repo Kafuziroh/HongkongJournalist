@@ -1,8 +1,11 @@
-//快排
+//快速排序
+//张承扬
 #include <iostream>
 #include <algorithm>
 #include <windows.h>
+#include "TimeData.h"
 using namespace std;
+int TS = 0; //排序趟数统计器
 
 int partition(double arr[], int l, int r)
 {
@@ -23,6 +26,7 @@ int partition(double arr[], int l, int r)
 
 void __quicksort(double arr[], int l, int r)
 {
+	TS++; //排序趟数++
 	if (l >= r)
 		return;
 	int p = partition(arr, l, r);
@@ -30,7 +34,7 @@ void __quicksort(double arr[], int l, int r)
 	__quicksort(arr, p + 1, r);
 }
 
-double FastSort(double arr[], int n)
+TimeData FastSort(double arr[], int n)
 {
 	double run_time;
 	_LARGE_INTEGER time_start; //开始时间
@@ -45,5 +49,7 @@ double FastSort(double arr[], int n)
 
 	QueryPerformanceCounter(&time_over); //计时结束
 	run_time = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq; //乘以1000000把单位由秒化为微秒，精度为1000000/（CPU主频）微秒
-	return run_time;
+	
+	TimeData a("快速排序", run_time, TS); //方法名称，所用时间，排序趟数
+	return a;
 }

@@ -27,6 +27,9 @@
     <ClCompile Include="FastSort.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="DataCollection.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ReaderFromKeyboard.h">
@@ -36,6 +39,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="FastSort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DataCollection.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeData.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

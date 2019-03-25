@@ -2,14 +2,14 @@
 
 #include "ReaderFromKeyboard.h"
 #include "ReaderFromFiles.h"
-
+#include "TimeData.h"
 #include "FastSort.h"
 
 using namespace std;
 int SIZE_OF_ARRAY = 0; //全局数组大小
 
 int main()
-{	
+{
 	cout << "========================================" << endl;
 	cout << "=========看谁排得快（香港记者）=========" << endl;
 	cout << "========================================" << endl;
