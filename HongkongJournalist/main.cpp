@@ -1,6 +1,9 @@
 #include <iostream>
 
 #include "ReaderFromKeyboard.h"
+#include "ReaderFromFiles.h"
+
+#include "FastSort.h"
 
 using namespace std;
 
