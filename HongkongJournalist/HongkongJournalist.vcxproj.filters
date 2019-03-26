@@ -48,6 +48,9 @@
     <ClCompile Include="TimeData.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ChooseSort.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ReaderFromKeyboard.h">
@@ -78,6 +81,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="ShuangXiangKuaiPai.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChooseSort.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

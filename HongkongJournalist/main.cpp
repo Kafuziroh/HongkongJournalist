@@ -5,6 +5,7 @@
 #include "TimeData.h"
 //排序方法
 #include "MaoPao.h"
+#include "ChooseSort.h"
 #include "ChaRu.h"
 #include "ErFeng.h"
 #include "FastSort.h"
@@ -52,47 +53,59 @@ RESETMARK0: //数据错误重置位置
 	double *arrTemp = new double[SIZE_OF_ARRAY];
 
 	//排序
-	cout << "冒泡排序中..." << endl;
+	cout << "冒泡排序中... ";
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
 	{
 		arrTemp[i] = arr[i];
 	}
 	TimeData bubbleSort = MaoPao(arrTemp, SIZE_OF_ARRAY);
+	cout << "用时" << bubbleSort.GetTime() << "μs " << "排序趟数" << bubbleSort.GetTangShu() << "次" << endl;
 
-	cout << "选择排序中..." << endl;
+	cout << "选择排序中... ";
+	for (int i = 0; i < SIZE_OF_ARRAY; i++)
+	{
+		arrTemp[i] = arr[i];
+	}
+	TimeData chooseSort = ChooseSort(arrTemp, SIZE_OF_ARRAY);
+	cout << "用时" << chooseSort.GetTime() << "μs " << "排序趟数" << chooseSort.GetTangShu() << "次" << endl;
 
-	cout << "插入排序中..." << endl;
+	cout << "插入排序中... ";
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
 	{
 		arrTemp[i] = arr[i];
 	}
 	TimeData insertSort = ChaRu(arrTemp, SIZE_OF_ARRAY);
+	cout << "用时" << insertSort.GetTime() << "μs " << "排序趟数" << insertSort.GetTangShu() << "次" << endl;
 
-	cout << "二分排序中..." << endl;
+	cout << "二分排序中... ";
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
 	{
 		arrTemp[i] = arr[i];
 	}
 	TimeData splitSort = ErFeng(arrTemp, SIZE_OF_ARRAY);
+	cout << "用时" << splitSort.GetTime() << "μs " << "排序趟数" << splitSort.GetTangShu() << "次" << endl;
 
-	cout << "快速排序中..." << endl;
+	cout << "快速排序中... ";
+	for (int i = 0; i < SIZE_OF_ARRAY; i++)
+	{
+		arrTemp[i] = arr[i];
+	}
+	TimeData quickSort = FastSort(arrTemp, SIZE_OF_ARRAY);
+	cout << "用时" << quickSort.GetTime() << "μs " << "排序趟数" << quickSort.GetTangShu() << "次" << endl;
+
+	cout << "双路快速排序中... " << endl;
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
 	{
 		arrTemp[i] = arr[i];
 	}
 
-	cout << "双路快速排序中..." << endl;
-	for (int i = 0; i < SIZE_OF_ARRAY; i++)
-	{
-		arrTemp[i] = arr[i];
-	}
-
-	cout << "SHELL排序中..." << endl;
+	cout << "SHELL排序中... ";
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
 	{
 		arrTemp[i] = arr[i];
 	}
 	TimeData shellSort = Shell(arrTemp, SIZE_OF_ARRAY);
+	cout << "用时" << shellSort.GetTime() << "μs " << "排序趟数" << shellSort.GetTangShu() << "次" << endl;
 
 	cout << "========================================" << endl;
 	cout << "========================================" << endl;

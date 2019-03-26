@@ -118,6 +118,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ChaRu.cpp" />
+    <ClCompile Include="ChooseSort.cpp" />
     <ClCompile Include="DataCollection.cpp" />
     <ClCompile Include="ErFeng.cpp" />
     <ClCompile Include="FastSort.cpp" />
@@ -131,6 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChaRu.h" />
+    <ClInclude Include="ChooseSort.h" />
     <ClInclude Include="DataCollection.h" />
     <ClInclude Include="ErFeng.h" />
     <ClInclude Include="FastSort.h" />

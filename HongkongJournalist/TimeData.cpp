@@ -28,5 +28,5 @@ double TimeData::GetTime()
 }
 int TimeData::GetTangShu()
 {
-	return _time;
+	return _tangShu;
 }

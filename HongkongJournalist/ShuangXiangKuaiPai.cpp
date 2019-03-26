@@ -1,9 +1,10 @@
 #include <iostream>
 #include <algorithm>
 #include "TimeData.h"
-#include <Windows.h>
+#include <windows.h>
 using namespace std;
 extern int SIZE_OF_ARRAY;
+int sumAAA = 0;//计算趟数所用
 template <typename T>
 //对arr[l...r]进行partition操作 
 int  partition(T arr[], int l, int r)
@@ -27,7 +28,7 @@ int  partition(T arr[], int l, int r)
 template <typename T>
 void __quicksort(T arr[], int l, int r)
 {
-	sum++;
+	sumAAA++;
 	if (l >= r)
 		return;
 
@@ -39,7 +40,7 @@ void __quicksort(T arr[], int l, int r)
 template <typename T>
 TimeData quicksort(T arr[], int n)
 {
-	int sum = 0;//计算趟数所用
+
 	double run_time;
 	_LARGE_INTEGER time_start;	//开始时间
 	_LARGE_INTEGER time_over;	//结束时间
@@ -52,6 +53,6 @@ TimeData quicksort(T arr[], int n)
 	QueryPerformanceCounter(&time_over);	//计时结束
 	run_time = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
 	//乘以1000000把单位由秒化为微秒，精度为1000 000/（cpu主频）微秒
-	TimeData pp("ShuangXiangKuaiPai", run_time, sum);
+	TimeData pp("ShuangXiangKuaiPai", run_time, sumAAA);
 	return pp;
 }
