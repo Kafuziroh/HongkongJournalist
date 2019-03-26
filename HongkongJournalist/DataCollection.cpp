@@ -1,3 +1,4 @@
+//数据输出至文本
 #include <iostream>
 #include <fstream>
 #include "TimeData.h"

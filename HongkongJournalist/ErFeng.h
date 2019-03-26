@@ -1,3 +1,3 @@
-//二分法排序
+//二分排序
 #include "TimeData.h"
 TimeData ErFeng(double str[], int len);

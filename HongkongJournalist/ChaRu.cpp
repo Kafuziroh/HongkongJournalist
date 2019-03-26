@@ -1,4 +1,4 @@
-//≤Â»Î∑®≈≈–Ú
+//≤Â»Î≈≈–Ú
 #include <iostream>
 #include <windows.h>
 #include "TimeData.h"

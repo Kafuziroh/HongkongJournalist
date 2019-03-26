@@ -1,4 +1,4 @@
-//二分法排序
+//二分排序
 #include <iostream>
 #include <windows.h>
 #include "TimeData.h"

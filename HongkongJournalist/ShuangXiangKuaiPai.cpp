@@ -1,8 +1,10 @@
+//双路快排
 #include <iostream>
 #include <algorithm>
 #include "TimeData.h"
 #include <Windows.h>
 using namespace std;
+
 int sumAAA = 0;//计算趟数所用
 //对arr[l...r]进行partition操作 
 int  partitionT(double arr[], int l, int r)
