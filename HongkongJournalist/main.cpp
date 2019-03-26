@@ -6,6 +6,7 @@
 #include "ReaderFromFiles.h"
 #include "TimeData.h"
 #include "DataCollection.h"
+#include "GraphDrawer.h"
 //排序方法
 #include "MaoPao.h"
 #include "ChooseSort.h"
@@ -23,9 +24,12 @@ int SIZE_OF_ARRAY = 0; //全局数组大小
 
 int main()
 {
-	cout << "==============================================" << endl;
-	cout << "============看谁排得快（香港记者）============" << endl;
-	cout << "==============================================" << endl;
+	//标题
+	{
+		cout << "==============================================" << endl;
+		cout << "============看谁排得快（香港记者）============" << endl;
+		cout << "==============================================" << endl;
+	}
 
 	//数据读入方法选择
 	cout << "==============================================" << endl;
@@ -35,7 +39,6 @@ int main()
 	cout << "请选择读入源数据的方法：";
 	int chooser = 0;
 	double *arr = NULL;
-
 RESETMARK0: //数据错误重置位置
 	cin >> chooser;
 	if (chooser != 1 && chooser != 2)
@@ -52,12 +55,12 @@ RESETMARK0: //数据错误重置位置
 	{
 		arr = ReadFromFiles();
 	}
+
+	//排序
 	cout << "==============================================" << endl;
 	cout << "源数据导入完成，回车进行排序...";
 	getchar();
 	double *arrTemp = new double[SIZE_OF_ARRAY];
-
-	//排序
 	cout << "==============================================" << endl;
 	cout << "1. 冒泡排序中... ";
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
@@ -66,7 +69,6 @@ RESETMARK0: //数据错误重置位置
 	}
 	TimeData bubbleSort = MaoPao(arrTemp, SIZE_OF_ARRAY);
 	cout << "用时" << bubbleSort.GetTime() << "μs " << "排序趟数" << bubbleSort.GetTangShu() << "次" << endl;
-
 	cout << "2. 双向冒泡排序中... ";
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
 	{
@@ -74,7 +76,6 @@ RESETMARK0: //数据错误重置位置
 	}
 	TimeData dbBubbleSort = TwoWayBubbleSort(arrTemp, SIZE_OF_ARRAY);
 	cout << "用时" << dbBubbleSort.GetTime() << "μs " << "排序趟数" << dbBubbleSort.GetTangShu() << "次" << endl;
-
 	cout << "3. 选择排序中... ";
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
 	{
@@ -82,7 +83,6 @@ RESETMARK0: //数据错误重置位置
 	}
 	TimeData chooseSort = ChooseSort(arrTemp, SIZE_OF_ARRAY);
 	cout << "用时" << chooseSort.GetTime() << "μs " << "排序趟数" << chooseSort.GetTangShu() << "次" << endl;
-
 	cout << "4. 插入排序中... ";
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
 	{
@@ -90,7 +90,6 @@ RESETMARK0: //数据错误重置位置
 	}
 	TimeData insertSort = ChaRu(arrTemp, SIZE_OF_ARRAY);
 	cout << "用时" << insertSort.GetTime() << "μs " << "排序趟数" << insertSort.GetTangShu() << "次" << endl;
-
 	cout << "5. 二分排序中... ";
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
 	{
@@ -98,7 +97,6 @@ RESETMARK0: //数据错误重置位置
 	}
 	TimeData splitSort = ErFeng(arrTemp, SIZE_OF_ARRAY);
 	cout << "用时" << splitSort.GetTime() << "μs " << "排序趟数" << splitSort.GetTangShu() << "次" << endl;
-
 	cout << "6. 交换排序中... ";
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
 	{
@@ -106,7 +104,6 @@ RESETMARK0: //数据错误重置位置
 	}
 	TimeData exchangeSort = ChangeSort(arrTemp, SIZE_OF_ARRAY);
 	cout << "用时" << exchangeSort.GetTime() << "μs " << "排序趟数" << exchangeSort.GetTangShu() << "次" << endl;
-
 	cout << "7. 快速排序中... ";
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
 	{
@@ -114,7 +111,6 @@ RESETMARK0: //数据错误重置位置
 	}
 	TimeData quickSort = FastSort(arrTemp, SIZE_OF_ARRAY);
 	cout << "用时" << quickSort.GetTime() << "μs " << "排序趟数" << quickSort.GetTangShu() << "次" << endl;
-
 	cout << "8. 双路快速排序中... ";
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
 	{
@@ -122,7 +118,6 @@ RESETMARK0: //数据错误重置位置
 	}
 	TimeData twoWQuickSort = quicksortT(arrTemp, SIZE_OF_ARRAY);
 	cout << "用时" << twoWQuickSort.GetTime() << "μs " << "排序趟数" << twoWQuickSort.GetTangShu() << "次" << endl;
-
 	cout << "9. 三路快速排序中... ";
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
 	{
@@ -130,7 +125,6 @@ RESETMARK0: //数据错误重置位置
 	}
 	TimeData trWQuickSort = ThreeRoadFastSort(arrTemp, SIZE_OF_ARRAY);
 	cout << "用时" << trWQuickSort.GetTime() << "μs " << "排序趟数" << trWQuickSort.GetTangShu() << "次" << endl;
-
 	cout << "10. SHELL排序中... ";
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
 	{
@@ -139,6 +133,7 @@ RESETMARK0: //数据错误重置位置
 	TimeData shellSort = Shell(arrTemp, SIZE_OF_ARRAY);
 	cout << "用时" << shellSort.GetTime() << "μs " << "排序趟数" << shellSort.GetTangShu() << "次" << endl;
 
+	//文件处理
 FILEERROR:
 	cout << "==============================================" << endl;
 	cout << "排序完成，回车查看性能对比情况并输出至文件...";
@@ -162,7 +157,7 @@ FILEERROR:
 	cout << "==============================================" << endl;
 	cout << "文件生成完成，回车查看数据对比情况...";
 	getchar();
-	
+
 	//对对象数组进行排序分析
 	int i, j;
 	for (i = 0; i < 9; i++)
@@ -182,5 +177,8 @@ FILEERROR:
 	{
 		opener << dataArray[i].GetWay() << " " << dataArray[i].GetTime() << " " << dataArray[i].GetTangShu() << endl;
 	}
+
+	GraphDrawer(dataArray);
+	getchar();
 	return 0;
 }

@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\SortWay">
+      <UniqueIdentifier>{3c9cd0cd-d236-40f9-924e-4f867674010b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SortWay">
+      <UniqueIdentifier>{9d6db335-04db-4f73-ba40-b3db85f3e2a7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ReaderFromKeyboard.cpp">
@@ -24,40 +30,43 @@
     <ClCompile Include="Main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="FastSort.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="DataCollection.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="MaoPao.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ShuangXiangKuaiPai.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Shell.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ErFeng.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ChaRu.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="TimeData.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ChaRu.cpp">
+      <Filter>源文件\SortWay</Filter>
+    </ClCompile>
     <ClCompile Include="ChooseSort.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\SortWay</Filter>
+    </ClCompile>
+    <ClCompile Include="ErFeng.cpp">
+      <Filter>源文件\SortWay</Filter>
     </ClCompile>
     <ClCompile Include="EXChangeSort.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\SortWay</Filter>
+    </ClCompile>
+    <ClCompile Include="FastSort.cpp">
+      <Filter>源文件\SortWay</Filter>
+    </ClCompile>
+    <ClCompile Include="MaoPao.cpp">
+      <Filter>源文件\SortWay</Filter>
+    </ClCompile>
+    <ClCompile Include="Shell.cpp">
+      <Filter>源文件\SortWay</Filter>
+    </ClCompile>
+    <ClCompile Include="ShuangXiangKuaiPai.cpp">
+      <Filter>源文件\SortWay</Filter>
     </ClCompile>
     <ClCompile Include="ThreeRoadFastSort.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\SortWay</Filter>
     </ClCompile>
     <ClCompile Include="TwoWayBubbleSort.cpp">
+      <Filter>源文件\SortWay</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphDrawer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -68,40 +77,43 @@
     <ClInclude Include="ReaderFromFiles.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="FastSort.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="DataCollection.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="TimeData.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="MaoPao.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="ChaRu.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="ErFeng.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Shell.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="ShuangXiangKuaiPai.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\SortWay</Filter>
     </ClInclude>
     <ClInclude Include="ChooseSort.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\SortWay</Filter>
+    </ClInclude>
+    <ClInclude Include="ErFeng.h">
+      <Filter>头文件\SortWay</Filter>
     </ClInclude>
     <ClInclude Include="EXChangeSort.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\SortWay</Filter>
+    </ClInclude>
+    <ClInclude Include="FastSort.h">
+      <Filter>头文件\SortWay</Filter>
+    </ClInclude>
+    <ClInclude Include="MaoPao.h">
+      <Filter>头文件\SortWay</Filter>
+    </ClInclude>
+    <ClInclude Include="Shell.h">
+      <Filter>头文件\SortWay</Filter>
+    </ClInclude>
+    <ClInclude Include="ShuangXiangKuaiPai.h">
+      <Filter>头文件\SortWay</Filter>
     </ClInclude>
     <ClInclude Include="ThreeRoadFastSort.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\SortWay</Filter>
     </ClInclude>
     <ClInclude Include="TwoWayBubbleSort.h">
+      <Filter>头文件\SortWay</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphDrawer.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
