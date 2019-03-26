@@ -1,5 +1,5 @@
-////三路快排
-//#include"TimeData.h"
-//template <typename T>
-//void __quicksort3(T a[], int l, int r);
-//TimeData ThreeRoadFastSort(double a[], int n, int l);
+//三路快排
+#include "TimeData.h"
+template <typename T>
+void __quicksort3(T arr[], int l, int r);
+TimeData ThreeRoadFastSort(double arr[], int n);

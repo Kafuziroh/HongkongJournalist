@@ -30,3 +30,15 @@ int TimeData::GetTangShu()
 {
 	return _tangShu;
 }
+void TimeData::SetWay(string way)
+{
+	_way = way;
+}
+void TimeData::SetTime(double time)
+{
+	_time = time;
+}
+void TimeData::SetTangShu(int tangShu)
+{
+	_tangShu = tangShu;
+}
