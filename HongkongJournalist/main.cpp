@@ -1,4 +1,6 @@
 #include <iostream>
+#include <algorithm>
+#include <fstream>
 //文件处理
 #include "ReaderFromKeyboard.h"
 #include "ReaderFromFiles.h"
@@ -160,5 +162,25 @@ FILEERROR:
 	cout << "==============================================" << endl;
 	cout << "文件生成完成，回车查看数据对比情况...";
 	getchar();
+	
+	//对对象数组进行排序分析
+	int i, j;
+	for (i = 0; i < 9; i++)
+	{
+		for (j = 0; j < 9 - i; j++)
+		{
+			if (dataArray[j].GetTime() > dataArray[j + 1].GetTime())
+			{
+				swap(dataArray[j], dataArray[j + 1]);
+			}
+		}
+	}
+	fstream opener;
+	opener.open("D:\\data_collection.txt", ios::app); //以追加方式打开文件
+	opener << "=====排序分析用数据输出=====" << endl;
+	for (int i = 0; i < 10; i++)
+	{
+		opener << dataArray[i].GetWay() << " " << dataArray[i].GetTime() << " " << dataArray[i].GetTangShu() << endl;
+	}
 	return 0;
 }
