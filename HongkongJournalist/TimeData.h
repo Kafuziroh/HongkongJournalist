@@ -18,6 +18,12 @@ public:
 	string GetWay(); //获取方法名
 	double GetTime(); //获取运行时间
 	int GetTangShu(); //获取排序趟数
+	string GetWay(); //获取方法名
+	double GetTime(); //获取运行时间
+	int GetTangShu(); //获取排序趟数
+	void SetWay(string way); //设置方法名
+	void SetTime(double time); //设置运行时间
+	void SetTangShu(int tangShu); //设置排序趟数
 };
 
 #endif // !_TIMEDATA
