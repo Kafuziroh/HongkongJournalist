@@ -3,6 +3,7 @@
 #include "ReaderFromKeyboard.h"
 #include "ReaderFromFiles.h"
 #include "TimeData.h"
+#include "DataCollection.h"
 //排序方法
 #include "MaoPao.h"
 #include "ChooseSort.h"
@@ -50,10 +51,11 @@ RESETMARK0: //数据错误重置位置
 	cout << "源数据导入完成，回车进行排序" << endl;
 	cout << "========================================" << endl;
 	getchar();
+	getchar();
 	double *arrTemp = new double[SIZE_OF_ARRAY];
 
 	//排序
-	cout << "冒泡排序中... ";
+	cout << "1. 冒泡排序中... ";
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
 	{
 		arrTemp[i] = arr[i];
@@ -61,7 +63,7 @@ RESETMARK0: //数据错误重置位置
 	TimeData bubbleSort = MaoPao(arrTemp, SIZE_OF_ARRAY);
 	cout << "用时" << bubbleSort.GetTime() << "μs " << "排序趟数" << bubbleSort.GetTangShu() << "次" << endl;
 
-	cout << "选择排序中... ";
+	cout << "3. 选择排序中... ";
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
 	{
 		arrTemp[i] = arr[i];
@@ -69,7 +71,7 @@ RESETMARK0: //数据错误重置位置
 	TimeData chooseSort = ChooseSort(arrTemp, SIZE_OF_ARRAY);
 	cout << "用时" << chooseSort.GetTime() << "μs " << "排序趟数" << chooseSort.GetTangShu() << "次" << endl;
 
-	cout << "插入排序中... ";
+	cout << "4. 插入排序中... ";
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
 	{
 		arrTemp[i] = arr[i];
@@ -77,7 +79,7 @@ RESETMARK0: //数据错误重置位置
 	TimeData insertSort = ChaRu(arrTemp, SIZE_OF_ARRAY);
 	cout << "用时" << insertSort.GetTime() << "μs " << "排序趟数" << insertSort.GetTangShu() << "次" << endl;
 
-	cout << "二分排序中... ";
+	cout << "5. 二分排序中... ";
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
 	{
 		arrTemp[i] = arr[i];
@@ -85,7 +87,7 @@ RESETMARK0: //数据错误重置位置
 	TimeData splitSort = ErFeng(arrTemp, SIZE_OF_ARRAY);
 	cout << "用时" << splitSort.GetTime() << "μs " << "排序趟数" << splitSort.GetTangShu() << "次" << endl;
 
-	cout << "快速排序中... ";
+	cout << "7. 快速排序中... ";
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
 	{
 		arrTemp[i] = arr[i];
@@ -93,7 +95,7 @@ RESETMARK0: //数据错误重置位置
 	TimeData quickSort = FastSort(arrTemp, SIZE_OF_ARRAY);
 	cout << "用时" << quickSort.GetTime() << "μs " << "排序趟数" << quickSort.GetTangShu() << "次" << endl;
 
-	cout << "双路快速排序中... ";
+	cout << "8. 双路快速排序中... ";
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
 	{
 		arrTemp[i] = arr[i];
@@ -101,22 +103,32 @@ RESETMARK0: //数据错误重置位置
 	TimeData twoWQuickSort = quicksortT(arrTemp, SIZE_OF_ARRAY);
 	cout << "用时" << twoWQuickSort.GetTime() << "μs " << "排序趟数" << twoWQuickSort.GetTangShu() << "次" << endl;
 
-	cout << "SHELL排序中... ";
+	cout << "10. SHELL排序中... ";
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
 	{
 		arrTemp[i] = arr[i];
 	}
 	TimeData shellSort = Shell(arrTemp, SIZE_OF_ARRAY);
 	cout << "用时" << shellSort.GetTime() << "μs " << "排序趟数" << shellSort.GetTangShu() << "次" << endl;
+	getchar();
+	getchar();
 
-	cout << "========================================" << endl;
-	cout << "========================================" << endl;
-	cout << "========================================" << endl;
-	cout << "========================================" << endl;
-	cout << "========================================" << endl;
-	cout << "========================================" << endl;
-	cout << "========================================" << endl;
-	cout << "========================================" << endl;
+	TimeData *dataArray = new TimeData[10];
+	dataArray[0] = bubbleSort;
+	dataArray[1] = bubbleSort;
+	dataArray[2] = chooseSort;
+	dataArray[3] = insertSort;
+	dataArray[4] = splitSort;
+	dataArray[5] = bubbleSort;
+	dataArray[6] = quickSort;
+	dataArray[7] = twoWQuickSort;
+	dataArray[8] = bubbleSort;
+	dataArray[9] = shellSort;
+	if (DataCollection(dataArray))
+	{
+
+	};
+	getchar();
 	getchar();
 	return 0;
 }

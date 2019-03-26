@@ -7,7 +7,7 @@ extern int SIZE_OF_ARRAY;
 
 TimeData Shell(double str[], int len)
 {
-	int sum = 0;
+	int sumBBB = 0;
 	double run_time;
 	_LARGE_INTEGER time_start;	//开始时间
 	_LARGE_INTEGER time_over;	//结束时间
@@ -27,13 +27,13 @@ TimeData Shell(double str[], int len)
 				temp = str[j];
 				str[j] = str[j + gap];//将相差gap位置的两个数进行调换
 				str[j + gap] = temp;
-				sum++;
 			}
 		}
+		sumBBB++;
 	}
 	QueryPerformanceCounter(&time_over);	//计时结束
 	run_time = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
 	//乘以1000000把单位由秒化为微秒，精度为1000 000/（cpu主频）微秒
-	TimeData pp("Shell", run_time, sum);
+	TimeData pp("Shell", run_time, sumBBB);
 	return pp;
 }

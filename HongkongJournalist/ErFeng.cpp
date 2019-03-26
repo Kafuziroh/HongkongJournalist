@@ -4,10 +4,10 @@
 #include "TimeData.h"
 using namespace std;
 extern int SIZE_OF_ARRAY;
+int sun = 0;
 
 TimeData ErFeng(double str[], int len)
 {
-	int sum = 0;
 	double run_time;
 	_LARGE_INTEGER time_start;	//开始时间
 	_LARGE_INTEGER time_over;	//结束时间
@@ -41,11 +41,11 @@ TimeData ErFeng(double str[], int len)
 			str[j + 1] = str[j];
 		}
 		str[high + 1] = temp; //插入
-		sum++;
+		sun++;
 	}
 	QueryPerformanceCounter(&time_over);	//计时结束
 	run_time = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
 	//乘以1000000把单位由秒化为微秒，精度为1000 000/（cpu主频）微秒
-	TimeData pp("ErFeng", run_time, sum);
+	TimeData pp("ErFeng", run_time, sun);
 	return pp;
 }
