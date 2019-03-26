@@ -1,3 +1,4 @@
 #include "TimeData.h"
-template <typename T>
-TimeData quicksort(T arr[],int n);
+int  partitionT(double arr[], int l, int r);
+void __quicksortT(double arr[], int l, int r);
+TimeData quicksortT(double arr[],int n);

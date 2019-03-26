@@ -93,11 +93,13 @@ RESETMARK0: //数据错误重置位置
 	TimeData quickSort = FastSort(arrTemp, SIZE_OF_ARRAY);
 	cout << "用时" << quickSort.GetTime() << "μs " << "排序趟数" << quickSort.GetTangShu() << "次" << endl;
 
-	cout << "双路快速排序中... " << endl;
+	cout << "双路快速排序中... ";
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
 	{
 		arrTemp[i] = arr[i];
 	}
+	TimeData twoWQuickSort = quicksortT(arrTemp, SIZE_OF_ARRAY);
+	cout << "用时" << twoWQuickSort.GetTime() << "μs " << "排序趟数" << twoWQuickSort.GetTangShu() << "次" << endl;
 
 	cout << "SHELL排序中... ";
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
