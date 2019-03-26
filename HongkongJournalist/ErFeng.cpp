@@ -46,6 +46,6 @@ TimeData ErFeng(double str[], int len)
 	QueryPerformanceCounter(&time_over);	//计时结束
 	run_time = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
 	//乘以1000000把单位由秒化为微秒，精度为1000 000/（cpu主频）微秒
-	TimeData pp("ErFeng", run_time, sun);
+	TimeData pp("二分排序", run_time, sun);
 	return pp;
 }

@@ -121,6 +121,7 @@
     <ClCompile Include="ChooseSort.cpp" />
     <ClCompile Include="DataCollection.cpp" />
     <ClCompile Include="ErFeng.cpp" />
+    <ClCompile Include="EXChangeSort.cpp" />
     <ClCompile Include="FastSort.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MaoPao.cpp" />
@@ -128,20 +129,25 @@
     <ClCompile Include="ReaderFromFiles.cpp" />
     <ClCompile Include="Shell.cpp" />
     <ClCompile Include="ShuangXiangKuaiPai.cpp" />
+    <ClCompile Include="ThreeRoadFastSort.cpp" />
     <ClCompile Include="TimeData.cpp" />
+    <ClCompile Include="TwoWayBubbleSort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChaRu.h" />
     <ClInclude Include="ChooseSort.h" />
     <ClInclude Include="DataCollection.h" />
     <ClInclude Include="ErFeng.h" />
+    <ClInclude Include="EXChangeSort.h" />
     <ClInclude Include="FastSort.h" />
     <ClInclude Include="MaoPao.h" />
     <ClInclude Include="ReaderFromFiles.h" />
     <ClInclude Include="ReaderFromKeyboard.h" />
     <ClInclude Include="Shell.h" />
     <ClInclude Include="ShuangXiangKuaiPai.h" />
+    <ClInclude Include="ThreeRoadFastSort.h" />
     <ClInclude Include="TimeData.h" />
+    <ClInclude Include="TwoWayBubbleSort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

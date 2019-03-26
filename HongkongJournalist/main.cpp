@@ -12,6 +12,9 @@
 #include "FastSort.h"
 #include "ShuangXiangKuaiPai.h"
 #include "Shell.h"
+#include "EXChangeSort.h"
+#include "TwoWayBubbleSort.h"
+#include "ThreeRoadFastSort.h"
 
 using namespace std;
 int SIZE_OF_ARRAY = 0; //全局数组大小
@@ -51,7 +54,6 @@ RESETMARK0: //数据错误重置位置
 	cout << "源数据导入完成，回车进行排序" << endl;
 	cout << "========================================" << endl;
 	getchar();
-	getchar();
 	double *arrTemp = new double[SIZE_OF_ARRAY];
 
 	//排序
@@ -62,6 +64,14 @@ RESETMARK0: //数据错误重置位置
 	}
 	TimeData bubbleSort = MaoPao(arrTemp, SIZE_OF_ARRAY);
 	cout << "用时" << bubbleSort.GetTime() << "μs " << "排序趟数" << bubbleSort.GetTangShu() << "次" << endl;
+
+	cout << "2. 双向冒泡排序中... ";
+	for (int i = 0; i < SIZE_OF_ARRAY; i++)
+	{
+		arrTemp[i] = arr[i];
+	}
+	TimeData dbBubbleSort = TwoWayBubbleSort(arrTemp, SIZE_OF_ARRAY);
+	cout << "用时" << dbBubbleSort.GetTime() << "μs " << "排序趟数" << dbBubbleSort.GetTangShu() << "次" << endl;
 
 	cout << "3. 选择排序中... ";
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
@@ -87,6 +97,14 @@ RESETMARK0: //数据错误重置位置
 	TimeData splitSort = ErFeng(arrTemp, SIZE_OF_ARRAY);
 	cout << "用时" << splitSort.GetTime() << "μs " << "排序趟数" << splitSort.GetTangShu() << "次" << endl;
 
+	cout << "6. 交换排序中... ";
+	for (int i = 0; i < SIZE_OF_ARRAY; i++)
+	{
+		arrTemp[i] = arr[i];
+	}
+	TimeData exchangeSort = ChangeSort(arrTemp, SIZE_OF_ARRAY);
+	cout << "用时" << exchangeSort.GetTime() << "μs " << "排序趟数" << exchangeSort.GetTangShu() << "次" << endl;
+
 	cout << "7. 快速排序中... ";
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
 	{
@@ -103,6 +121,14 @@ RESETMARK0: //数据错误重置位置
 	TimeData twoWQuickSort = quicksortT(arrTemp, SIZE_OF_ARRAY);
 	cout << "用时" << twoWQuickSort.GetTime() << "μs " << "排序趟数" << twoWQuickSort.GetTangShu() << "次" << endl;
 
+	cout << "9. 三路快速排序中... ";
+	for (int i = 0; i < SIZE_OF_ARRAY; i++)
+	{
+		arrTemp[i] = arr[i];
+	}
+	//TimeData trWQuickSort = ThreeRoadFastSort(arrTemp, SIZE_OF_ARRAY);
+	//cout << "用时" << trWQuickSort.GetTime() << "μs " << "排序趟数" << trWQuickSort.GetTangShu() << "次" << endl;
+
 	cout << "10. SHELL排序中... ";
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
 	{
@@ -111,15 +137,14 @@ RESETMARK0: //数据错误重置位置
 	TimeData shellSort = Shell(arrTemp, SIZE_OF_ARRAY);
 	cout << "用时" << shellSort.GetTime() << "μs " << "排序趟数" << shellSort.GetTangShu() << "次" << endl;
 	getchar();
-	getchar();
 
 	TimeData *dataArray = new TimeData[10];
 	dataArray[0] = bubbleSort;
-	dataArray[1] = bubbleSort;
+	dataArray[1] = dbBubbleSort;
 	dataArray[2] = chooseSort;
 	dataArray[3] = insertSort;
 	dataArray[4] = splitSort;
-	dataArray[5] = bubbleSort;
+	dataArray[5] = exchangeSort;
 	dataArray[6] = quickSort;
 	dataArray[7] = twoWQuickSort;
 	dataArray[8] = bubbleSort;
@@ -128,7 +153,6 @@ RESETMARK0: //数据错误重置位置
 	{
 
 	};
-	getchar();
 	getchar();
 	return 0;
 }

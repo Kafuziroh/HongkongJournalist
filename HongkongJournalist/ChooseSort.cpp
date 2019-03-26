@@ -35,6 +35,6 @@ TimeData ChooseSort(double a[], int n)                     //选择法排序
 	QueryPerformanceCounter(&time_over);	             //计时结束
 	run_time = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
 	// 乘以1000000把单位由秒化为微秒，精度为1000 000 / （cpu主频）微秒
-	TimeData aaa("选择法排序", run_time, n - 1); //方法名称，所用时间，排序趟数
+	TimeData aaa("选择排序", run_time, n - 1); //方法名称，所用时间，排序趟数
 	return aaa;
 }

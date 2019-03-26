@@ -30,7 +30,7 @@ TimeData MaoPao(double str[], int len)
 	QueryPerformanceCounter(&time_over);	//计时结束
 	run_time = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
 	//乘以1000000把单位由秒化为微秒，精度为1000 000/（cpu主频）微秒
-	TimeData pp("MaoPao", run_time, len - 1);
+	TimeData pp("冒泡排序", run_time, len - 1);
 	return pp;
 }
 

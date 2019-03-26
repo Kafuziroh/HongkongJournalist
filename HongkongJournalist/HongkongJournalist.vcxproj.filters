@@ -51,6 +51,15 @@
     <ClCompile Include="ChooseSort.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="EXChangeSort.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreeRoadFastSort.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TwoWayBubbleSort.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ReaderFromKeyboard.h">
@@ -84,6 +93,15 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="ChooseSort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EXChangeSort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreeRoadFastSort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TwoWayBubbleSort.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
