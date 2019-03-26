@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include "TimeData.h"
+
 using namespace std;
 
 int DataCollection(TimeData dataArray[]) {

@@ -12,12 +12,12 @@ class TimeData
 	double _time; //排序时间
 	int _tangShu; //排序趟数
 public:
-	TimeData();
-	TimeData(string way, double time, int tangShu);
-	TimeData(const TimeData &timeData);
-	string GetWay();
-	double GetTime();
-	int GetTangShu();
+	TimeData(); //无参构造函数
+	TimeData(string way, double time, int tangShu); //带参构造函数
+	TimeData(const TimeData &timeData); //拷贝构造函数
+	string GetWay(); //获取方法名
+	double GetTime(); //获取运行时间
+	int GetTangShu(); //获取排序趟数
 };
 
 #endif // !_TIMEDATA
