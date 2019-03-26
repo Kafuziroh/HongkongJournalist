@@ -8,6 +8,7 @@ int DataCollection(TimeData dataArray[]) {
 	ofstream ofile("D:\\data_collection.txt");
 	if (!ofile)
 	{
+
 		cout << "建立文件失败，请检查用户是否有程序所在文件夹的写入权限" << endl;
 		return 1; //失败为1
 	}
