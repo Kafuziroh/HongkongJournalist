@@ -13,7 +13,7 @@ double* ReadFromFiles()
 RESETMARK2: //文件错误重置位置
 	cout << "即将从程序同目录下读入\"array.txt\"，按回车确认..." << endl;
 	getchar();
-	fp = fopen("array.txt", "r");
+	fp = fopen("D:\\array.txt", "r");
 	if (!fp)
 	{
 		cout << "打开文件失败，请检查是否有\"array.txt\"位于同目录下" << endl;
@@ -26,7 +26,7 @@ RESETMARK2: //文件错误重置位置
 		fscanf(fp, "%lf", &tmp);
 		arrayTemp->push_back(tmp);
 	}
-	SIZE_OF_ARRAY = arrayTemp->capacity();
+	SIZE_OF_ARRAY = arrayTemp->size();
 	double *backArray = new double[SIZE_OF_ARRAY];
 	for (int i = 0; i < SIZE_OF_ARRAY; i++)
 	{

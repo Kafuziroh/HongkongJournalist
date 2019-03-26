@@ -27,6 +27,39 @@
     <ClCompile Include="FastSort.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="DataCollection.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MaoPao.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ShuangXiangKuaiPai.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Shell.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ErFeng.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChaRu.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChooseSort.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="EXChangeSort.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreeRoadFastSort.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TwoWayBubbleSort.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ReaderFromKeyboard.h">
@@ -36,6 +69,39 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="FastSort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DataCollection.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MaoPao.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChaRu.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ErFeng.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Shell.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ShuangXiangKuaiPai.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChooseSort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EXChangeSort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreeRoadFastSort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TwoWayBubbleSort.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
