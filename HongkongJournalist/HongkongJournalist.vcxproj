@@ -131,6 +131,7 @@
     <ClCompile Include="Shell.cpp" />
     <ClCompile Include="ShuangXiangKuaiPai.cpp" />
     <ClCompile Include="ShuChu.cpp" />
+    <ClCompile Include="SystemRandom.cpp" />
     <ClCompile Include="ThreeRoadFastSort.cpp" />
     <ClCompile Include="TimeData.cpp" />
     <ClCompile Include="TwoWayBubbleSort.cpp" />
@@ -149,6 +150,7 @@
     <ClInclude Include="Shell.h" />
     <ClInclude Include="ShuangXiangKuaiPai.h" />
     <ClInclude Include="ShuChu.h" />
+    <ClInclude Include="SystemRandom.h" />
     <ClInclude Include="ThreeRoadFastSort.h" />
     <ClInclude Include="TimeData.h" />
     <ClInclude Include="TwoWayBubbleSort.h" />

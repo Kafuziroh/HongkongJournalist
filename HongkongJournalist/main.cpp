@@ -1,9 +1,11 @@
 #include <iostream>
 #include <algorithm>
 #include <fstream>
+#include <ctime>
 //文件处理
 #include "ReaderFromKeyboard.h"
 #include "ReaderFromFiles.h"
+#include "SystemRandom.h"
 #include "TimeData.h"
 #include "DataCollection.h"
 #include "GraphDrawer.h"
@@ -73,13 +75,14 @@ PROCESS1: //读入源数据进行排序和分析
 	cout << "==============================================" << endl;
 	cout << "1. 从键盘直接输入源数据" << endl;
 	cout << "2. 从文件读入源数据" << endl;
+	cout << "3. 随机生成源数据" << endl;
 	cout << "==============================================" << endl;
 	cout << "请选择读入源数据的方法：";
 	chooser = 0;
 	double *arr = NULL;
 RESETMARK0: //数据错误重置位置
 	cin >> chooser;
-	if (chooser != 1 && chooser != 2)
+	if (chooser != 1 && chooser != 2 && chooser != 3)
 	{
 		cout << "==============================================" << endl;
 		cout << "选择错误，请重新输入：";
@@ -92,6 +95,21 @@ RESETMARK0: //数据错误重置位置
 	else if (chooser == 2) //从文件读入源数据
 	{
 		arr = ReadFromFiles();
+	}
+	else if (chooser == 3) //随机生成源数据
+	{
+		int i, k = 0;
+		int arrPre[5000];                          //整数数组，保存生成的随机数
+		arr = new double[5000];                       //浮点数数组，保存结果
+		srand((unsigned)time(NULL));
+		while (k != 5000) {                     //生成整数     
+			arrPre[k] = rand();                 //注意随机整数的范围
+			++k;                             //cout<<list[k]<<" ";  //调试用     
+		}
+		for (i = 0; i != k; ++i) {           //输出
+			arr[i] = arrPre[i] / 100.0;
+		}
+		SIZE_OF_ARRAY = 5000;
 	}
 
 	//排序
