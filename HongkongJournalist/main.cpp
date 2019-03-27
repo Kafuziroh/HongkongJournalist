@@ -33,11 +33,36 @@ int main()
 
 	//数据读入方法选择
 	cout << "==============================================" << endl;
+	cout << "1. 读入源数据进行排序和分析" << endl;
+	cout << "2. 从文件读入排序结果直接进行分析" << endl;
+	cout << "==============================================" << endl;
+	cout << "请选择要执行的程序：";
+	int chooser = 0;
+RESETMARK00: //选择错误重置位置
+	cin >> chooser;
+	if (chooser != 1 && chooser != 2)
+	{
+		cout << "==============================================" << endl;
+		cout << "选择错误，请重新输入：";
+		goto RESETMARK00;
+	}
+	else if (chooser == 1) //读入源数据进行排序和分析
+	{
+		goto PROCESS1;
+	}
+	else if (chooser == 2) //从文件读入排序结果直接进行分析
+	{
+		return 0;
+	}
+
+PROCESS1: //读入源数据进行排序和分析
+	//数据读入方法选择
+	cout << "==============================================" << endl;
 	cout << "1. 从键盘直接输入源数据" << endl;
 	cout << "2. 从文件读入源数据" << endl;
 	cout << "==============================================" << endl;
 	cout << "请选择读入源数据的方法：";
-	int chooser = 0;
+	chooser = 0;
 	double *arr = NULL;
 RESETMARK0: //数据错误重置位置
 	cin >> chooser;
@@ -136,7 +161,7 @@ RESETMARK0: //数据错误重置位置
 	//文件处理
 FILEERROR:
 	cout << "==============================================" << endl;
-	cout << "排序完成，回车查看性能对比情况并输出至文件...";
+	cout << "排序完成，回车输出至文件...";
 	getchar();
 
 	TimeData *dataArray = new TimeData[10]; //建立结果数组
@@ -152,11 +177,10 @@ FILEERROR:
 	dataArray[9] = shellSort;
 	if (DataCollection(dataArray)) //如果输出失败
 	{
+		cout << "==============================================" << endl;
+		cout << "文件生成失败，回车尝试重新生成...";
 		goto FILEERROR;
 	};
-	cout << "==============================================" << endl;
-	cout << "文件生成完成，回车查看数据对比情况...";
-	getchar();
 
 	//对对象数组进行排序分析
 	int i, j;
@@ -178,7 +202,17 @@ FILEERROR:
 		opener << dataArray[i].GetWay() << " " << dataArray[i].GetTime() << " " << dataArray[i].GetTangShu() << endl;
 	}
 
-	GraphDrawer(dataArray);
+DRAWERROR: //图表绘制重置点
+	cout << "==============================================" << endl;
+	cout << "文件已成功生成，回车查看图表...";
+	getchar();
+	if (GraphDrawer(dataArray)) //如果绘图失败
+	{
+		cout << "==============================================" << endl;
+		cout << "图表绘制失败，回车尝试重新生成...";
+		goto DRAWERROR;
+	};
+	
 	getchar();
 	return 0;
 }
