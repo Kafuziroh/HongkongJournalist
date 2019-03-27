@@ -72,9 +72,6 @@
     <ClCompile Include="ShuChu.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="SystemRandom.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ReaderFromKeyboard.h">
@@ -123,9 +120,6 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="ShuChu.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="SystemRandom.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
