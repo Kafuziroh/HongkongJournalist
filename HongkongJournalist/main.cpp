@@ -7,6 +7,7 @@
 #include "TimeData.h"
 #include "DataCollection.h"
 #include "GraphDrawer.h"
+#include "ShuChu.h"
 //排序方法
 #include "MaoPao.h"
 #include "ChooseSort.h"
@@ -34,12 +35,13 @@ int main()
 	//数据读入方法选择
 	cout << "==============================================" << endl;
 	cout << "1. 读入源数据进行排序和分析" << endl;
-	cout << "2. 从文件读入排序结果直接进行分析" << endl;
+	cout << "2. 从data_collection.txt读入排序结果直接进行分析" << endl;
 	cout << "==============================================" << endl;
 	cout << "请选择要执行的程序：";
 	int chooser = 0;
 RESETMARK00: //选择错误重置位置
 	cin >> chooser;
+	getchar();
 	if (chooser != 1 && chooser != 2)
 	{
 		cout << "==============================================" << endl;
@@ -52,6 +54,15 @@ RESETMARK00: //选择错误重置位置
 	}
 	else if (chooser == 2) //从文件读入排序结果直接进行分析
 	{
+		FILEERRORA:
+		if (ShuChu())
+		{
+			cout << "==============================================" << endl;
+			cout << "读取文件失败或文件不存在，回车重试...";
+			getchar();
+			goto FILEERRORA;
+		}
+		getchar();
 		return 0;
 	}
 
