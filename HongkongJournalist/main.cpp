@@ -7,6 +7,7 @@
 #include "TimeData.h"
 #include "DataCollection.h"
 #include "GraphDrawer.h"
+#include "ShuChu.h"
 //排序方法
 #include "MaoPao.h"
 #include "ChooseSort.h"
@@ -33,11 +34,48 @@ int main()
 
 	//数据读入方法选择
 	cout << "==============================================" << endl;
+	cout << "1. 读入源数据进行排序和分析" << endl;
+	cout << "2. 从data_collection.txt读入排序结果直接进行图表绘制" << endl;
+	cout << "==============================================" << endl;
+	cout << "请选择要执行的程序：";
+	int chooser = 0;
+RESETMARK00: //选择错误重置位置
+	cin >> chooser;
+	getchar();
+	if (chooser != 1 && chooser != 2)
+	{
+		cout << "==============================================" << endl;
+		cout << "选择错误，请重新输入：";
+		goto RESETMARK00;
+	}
+	else if (chooser == 1) //读入源数据进行排序和分析
+	{
+		goto PROCESS1;
+	}
+	else if (chooser == 2) //从文件读入排序结果直接进行分析
+	{
+		FILEERRORA:
+		if (ShuChu())
+		{
+			cout << "==============================================" << endl;
+			cout << "读取文件失败或文件不存在，回车重试...";
+			getchar();
+			goto FILEERRORA;
+		}
+		cout << "==============================================" << endl;
+		cout << "程序已结束，按任意键退出，感谢使用...";
+		getchar();
+		return 0;
+	}
+
+PROCESS1: //读入源数据进行排序和分析
+	//数据读入方法选择
+	cout << "==============================================" << endl;
 	cout << "1. 从键盘直接输入源数据" << endl;
 	cout << "2. 从文件读入源数据" << endl;
 	cout << "==============================================" << endl;
 	cout << "请选择读入源数据的方法：";
-	int chooser = 0;
+	chooser = 0;
 	double *arr = NULL;
 RESETMARK0: //数据错误重置位置
 	cin >> chooser;
@@ -136,7 +174,7 @@ RESETMARK0: //数据错误重置位置
 	//文件处理
 FILEERROR:
 	cout << "==============================================" << endl;
-	cout << "排序完成，回车查看性能对比情况并输出至文件...";
+	cout << "排序完成，回车输出至文件...";
 	getchar();
 
 	TimeData *dataArray = new TimeData[10]; //建立结果数组
@@ -152,11 +190,10 @@ FILEERROR:
 	dataArray[9] = shellSort;
 	if (DataCollection(dataArray)) //如果输出失败
 	{
+		cout << "==============================================" << endl;
+		cout << "文件生成失败，回车尝试重新生成...";
 		goto FILEERROR;
 	};
-	cout << "==============================================" << endl;
-	cout << "文件生成完成，回车查看数据对比情况...";
-	getchar();
 
 	//对对象数组进行排序分析
 	int i, j;
@@ -170,15 +207,30 @@ FILEERROR:
 			}
 		}
 	}
+
+DRAWERROR: //图表绘制重置点
+	cout << "==============================================" << endl;
+	cout << "文件已成功生成在程序目录下，回车查看图表...";
+	getchar();
+	if (GraphDrawer(dataArray)) //如果绘图失败
+	{
+		cout << "==============================================" << endl;
+		cout << "图表绘制失败，回车尝试重新生成...";
+		goto DRAWERROR;
+	};
+
+	//以追加方式打开文件输出排序后数据
 	fstream opener;
-	opener.open("D:\\data_collection.txt", ios::app); //以追加方式打开文件
-	opener << "=====排序分析用数据输出=====" << endl;
+	opener.open("data_collection.txt", ios::app); 
+	opener << "=====以上为未排序前源数据=====" << endl;
+	opener << "=====以下为排序分析完成后数据=====" << endl << endl;
 	for (int i = 0; i < 10; i++)
 	{
 		opener << dataArray[i].GetWay() << " " << dataArray[i].GetTime() << " " << dataArray[i].GetTangShu() << endl;
 	}
 
-	GraphDrawer(dataArray);
+	cout << "==============================================" << endl;
+	cout << "程序已结束，按任意键退出，感谢使用...";
 	getchar();
 	return 0;
 }
