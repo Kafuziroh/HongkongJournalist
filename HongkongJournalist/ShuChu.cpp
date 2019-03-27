@@ -2,6 +2,7 @@
 #include <fstream>
 #include <sstream>
 #include "TimeData.h"
+#include "GraphDrawer.h"
 
 using namespace std;
 
@@ -15,10 +16,14 @@ int ShuChu()
 	int i = 0, j;
 	double k;
 	TimeData str[10];
-	char ste[10];
+	char ste[20];
 	string line;
 	while (getline(ifile, line))
 	{
+		if (i > 9)
+		{
+			break;
+		}
 		stringstream ss;
 		ss << line;
 		ss >> ste >> k >> j;
@@ -41,10 +46,7 @@ int ShuChu()
 			}
 		}
 	}
-	for (i = 0; i < 10; i++)
-	{
-		cout << str[i].GetWay() << " " << str[i].GetTime() << " " << str[i].GetTangShu() << endl;
-	}
+	GraphDrawer(str);
 	ifile.close();
 	return 0;
 }

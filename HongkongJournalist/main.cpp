@@ -35,7 +35,7 @@ int main()
 	//数据读入方法选择
 	cout << "==============================================" << endl;
 	cout << "1. 读入源数据进行排序和分析" << endl;
-	cout << "2. 从data_collection.txt读入排序结果直接进行分析" << endl;
+	cout << "2. 从data_collection.txt读入排序结果直接进行图表绘制" << endl;
 	cout << "==============================================" << endl;
 	cout << "请选择要执行的程序：";
 	int chooser = 0;
@@ -62,6 +62,8 @@ RESETMARK00: //选择错误重置位置
 			getchar();
 			goto FILEERRORA;
 		}
+		cout << "==============================================" << endl;
+		cout << "程序已结束，按任意键退出，感谢使用...";
 		getchar();
 		return 0;
 	}
@@ -216,7 +218,19 @@ DRAWERROR: //图表绘制重置点
 		cout << "图表绘制失败，回车尝试重新生成...";
 		goto DRAWERROR;
 	};
-	
+
+	//以追加方式打开文件输出排序后数据
+	fstream opener;
+	opener.open("data_collection.txt", ios::app); 
+	opener << "=====以上为未排序前源数据=====" << endl;
+	opener << "=====以下为排序分析完成后数据=====" << endl << endl;
+	for (int i = 0; i < 10; i++)
+	{
+		opener << dataArray[i].GetWay() << " " << dataArray[i].GetTime() << " " << dataArray[i].GetTangShu() << endl;
+	}
+
+	cout << "==============================================" << endl;
+	cout << "程序已结束，按任意键退出，感谢使用...";
 	getchar();
 	return 0;
 }

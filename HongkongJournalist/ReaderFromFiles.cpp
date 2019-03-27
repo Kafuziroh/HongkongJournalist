@@ -27,6 +27,7 @@ RESETMARKFILE: //选择错误重置位置
 	}
 	else if (chooserTMP == 1) //从程序同目录赌读入"array.txt"源数据
 	{
+		cout << "==============================================" << endl;
 		cout << "即将从程序同目录下读入\"array.txt\"，按回车确认...";
 		getchar();
 		getchar();
