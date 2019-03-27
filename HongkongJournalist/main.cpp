@@ -205,13 +205,6 @@ FILEERROR:
 			}
 		}
 	}
-	fstream opener;
-	opener.open("data_collection.txt", ios::app); //以追加方式打开文件
-	opener << "=====排序分析用数据输出=====" << endl;
-	for (int i = 0; i < 10; i++)
-	{
-		opener << dataArray[i].GetWay() << " " << dataArray[i].GetTime() << " " << dataArray[i].GetTangShu() << endl;
-	}
 
 DRAWERROR: //图表绘制重置点
 	cout << "==============================================" << endl;

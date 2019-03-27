@@ -6,7 +6,7 @@
 using namespace std;
 
 int DataCollection(TimeData dataArray[]) {
-	ofstream ofile("D:\\data_collection.txt");
+	ofstream ofile("data_collection.txt");
 	if (!ofile)
 	{
 
