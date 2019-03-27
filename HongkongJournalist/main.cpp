@@ -195,7 +195,7 @@ FILEERROR:
 		}
 	}
 	fstream opener;
-	opener.open("D:\\data_collection.txt", ios::app); //以追加方式打开文件
+	opener.open("data_collection.txt", ios::app); //以追加方式打开文件
 	opener << "=====排序分析用数据输出=====" << endl;
 	for (int i = 0; i < 10; i++)
 	{
@@ -204,7 +204,7 @@ FILEERROR:
 
 DRAWERROR: //图表绘制重置点
 	cout << "==============================================" << endl;
-	cout << "文件已成功生成，回车查看图表...";
+	cout << "文件已成功生成在程序目录下，回车查看图表...";
 	getchar();
 	if (GraphDrawer(dataArray)) //如果绘图失败
 	{

@@ -30,7 +30,7 @@ RESETMARKFILE: //选择错误重置位置
 		cout << "即将从程序同目录下读入\"array.txt\"，按回车确认...";
 		getchar();
 		getchar();
-		fp = fopen("D:\\array.txt", "r");
+		fp = fopen("array.txt", "r");
 	}
 	else if (chooserTMP == 2) //读入指定文件
 	{
