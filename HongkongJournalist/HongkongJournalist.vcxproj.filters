@@ -27,9 +27,6 @@
     <ClCompile Include="ReaderFromFiles.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Main.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="DataCollection.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -70,6 +67,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="ShuChu.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -132,9 +132,6 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\..\..\Blog\Hexo\source\favicon.ico">
-      <Filter>资源文件</Filter>
-    </Image>
     <Image Include="..\DSR CA LOGO.ico">
       <Filter>资源文件</Filter>
     </Image>

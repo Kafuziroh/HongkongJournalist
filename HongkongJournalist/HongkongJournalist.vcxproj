@@ -124,7 +124,7 @@
     <ClCompile Include="EXChangeSort.cpp" />
     <ClCompile Include="FastSort.cpp" />
     <ClCompile Include="GraphDrawer.cpp" />
-    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="MaoPao.cpp" />
     <ClCompile Include="ReaderFromKeyboard.cpp" />
     <ClCompile Include="ReaderFromFiles.cpp" />
@@ -158,7 +158,6 @@
     <ResourceCompile Include="Resource.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\..\..\Blog\Hexo\source\favicon.ico" />
     <Image Include="..\DSR CA LOGO.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
