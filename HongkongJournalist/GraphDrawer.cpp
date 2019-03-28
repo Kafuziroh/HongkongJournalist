@@ -17,5 +17,6 @@ int GraphDrawer(TimeData arr[])
 		}
 		cout << " " << arr[k].GetTime() << "μs" << " " << arr[k].GetTangShu() << "次" << arr[k].GetWay() << endl << endl;
 	}
-		return 0;
+	cout << "■ 最快方法 ■ " << arr[0].GetWay() << " " << arr[0].GetTime() << "μs" << " " << arr[0].GetTangShu() << "次排序" << endl << "■ 最慢方法 ■ " << arr[9].GetWay() << " " << arr[9].GetTime() << "μs" << " " << arr[9].GetTangShu() << "次排序" << endl;
+	return 0;
 }

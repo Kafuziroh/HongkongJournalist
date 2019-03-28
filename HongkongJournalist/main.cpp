@@ -27,9 +27,10 @@ int SIZE_OF_ARRAY = 0; //全局数组大小
 
 int main()
 {
-	system("mode con cols=150 lines=40");
+	system("mode con cols=130 lines=40");
 	system("color 70");
 	system("title=看谁排得快（香港记者）");
+
 	//标题
 	{
 		cout << "======================================================" << endl;
@@ -37,6 +38,7 @@ int main()
 		cout << "======================================================" << endl;
 	}
 
+RRRRRESET:
 	//数据读入方法选择
 	cout << "======================================================" << endl;
 	cout << "1. 读入源数据进行排序和分析" << endl;
@@ -59,7 +61,7 @@ RESETMARK00: //选择错误重置位置
 	}
 	else if (chooser == 2) //从文件读入排序结果直接进行分析
 	{
-		FILEERRORA:
+	FILEERRORA:
 		if (ShuChu())
 		{
 			cout << "======================================================" << endl;
@@ -68,7 +70,24 @@ RESETMARK00: //选择错误重置位置
 			goto FILEERRORA;
 		}
 		cout << "======================================================" << endl;
-		cout << "程序已结束，按任意键退出，感谢使用...";
+		cout << "程序已结束，是否退出程序？(y/n)";
+		char choosere;
+	RESETMARK00000: //数据错误重置位置
+		cin >> choosere;
+		if (choosere != 'y' && choosere != 'n' && choosere != 'Y' && choosere != 'N')
+		{
+			cout << "======================================================" << endl;
+			cout << "选择错误，请重新输入：";
+			goto RESETMARK00000;
+		}
+		else if (choosere == 'y' || choosere == 'Y') //退出程序
+		{
+			return 0;
+		}
+		else if (choosere == 'n' || choosere == 'N') //RESET
+		{
+			goto RRRRRESET;
+		}
 		getchar();
 		return 0;
 	}
@@ -78,7 +97,7 @@ PROCESS1: //读入源数据进行排序和分析
 	cout << "======================================================" << endl;
 	cout << "1. 从键盘直接输入源数据" << endl;
 	cout << "2. 从文件读入源数据" << endl;
-	cout << "3. 随机生成5万个double类型源数据" << endl;
+	cout << "3. 随机生成1万个double类型源数据" << endl;
 	cout << "======================================================" << endl;
 	cout << "请选择读入源数据的方法：";
 	chooser = 0;
@@ -102,17 +121,17 @@ RESETMARK0: //数据错误重置位置
 	else if (chooser == 3) //随机生成源数据
 	{
 		int i, k = 0;
-		int arrPre[20000];                          //整数数组，保存生成的随机数
-		arr = new double[20000];                       //浮点数数组，保存结果
+		int arrPre[10000];                          //整数数组，保存生成的随机数
+		arr = new double[10000];                       //浮点数数组，保存结果
 		srand((unsigned)time(NULL));
-		while (k != 20000) {                     //生成整数     
+		while (k != 10000) {                     //生成整数     
 			arrPre[k] = rand();                 //注意随机整数的范围
 			++k;                             //cout<<list[k]<<" ";  //调试用     
 		}
 		for (i = 0; i != k; ++i) {           //输出
 			arr[i] = arrPre[i] / 100.0;
 		}
-		SIZE_OF_ARRAY = 20000;
+		SIZE_OF_ARRAY = 10000;
 		getchar();
 	}
 
@@ -232,7 +251,7 @@ FILEERROR:
 
 DRAWERROR: //图表绘制重置点
 	cout << "======================================================" << endl;
-	cout << "文件已成功生成在程序目录下，回车查看图表...";
+	cout << "文件成功生成于程序目录，回车输出处理后数据并查看图表...";
 	getchar();
 	if (GraphDrawer(dataArray)) //如果绘图失败
 	{
@@ -243,7 +262,7 @@ DRAWERROR: //图表绘制重置点
 
 	//以追加方式打开文件输出排序后数据
 	fstream opener;
-	opener.open("data_collection.txt", ios::app); 
+	opener.open("data_collection.txt", ios::app);
 	opener << "=====以上为未排序前源数据=====" << endl;
 	opener << "=====以下为排序分析完成后数据=====" << endl << endl;
 	for (int i = 0; i < 10; i++)
@@ -252,7 +271,24 @@ DRAWERROR: //图表绘制重置点
 	}
 
 	cout << "======================================================" << endl;
-	cout << "程序已结束，按任意键退出，感谢使用...";
+	cout << "程序已结束，是否退出程序？(y/n)";
+	char choosere;
+RESETMARK000: //数据错误重置位置
+	cin >> choosere;
+	if (choosere != 'y' && choosere != 'n' && choosere != 'Y' && choosere != 'N')
+	{
+		cout << "======================================================" << endl;
+		cout << "选择错误，请重新输入：";
+		goto RESETMARK000;
+	}
+	else if (choosere == 'y' || choosere == 'Y') //退出程序
+	{
+		return 0;
+	}
+	else if (choosere == 'n' || choosere == 'N') //RESET
+	{
+		goto RRRRRESET;
+	}
 	getchar();
 	return 0;
 }
