@@ -3,12 +3,9 @@
 #include "TimeData.h"
 
 using namespace std;
-
-TimeData TwoWayBubbleSort(double a[], int n)
+extern int SIZE_OF_ARRAY;
+TimeData TwoWayBubbleSort(double number[], int n)
 {
-	int i, k;
-	int left = 1, right = n - 1;
-	double tmp;
 	double dqFreq; //计时器频率
 	double run_time;
 	_LARGE_INTEGER time_start; //开始时间
@@ -17,31 +14,29 @@ TimeData TwoWayBubbleSort(double a[], int n)
 	QueryPerformanceFrequency(&f);
 	dqFreq = (double)f.QuadPart;
 	QueryPerformanceCounter(&time_start); //计时开始
-	do
+	int left = 0, right = SIZE_OF_ARRAY - 1, shift = 1;
+	int i;
+	while (left < right)
 	{
-		for (i = right; i >= left; i--) //正向部分
+		for (i = left; i < right; i++)
 		{
-			if (a[i] < a[i - 1])
+			if (number[i] > number[i + 1])
 			{
-				tmp = a[i];
-				a[i] = a[i - 1];
-				a[i - 1] = tmp;
-				k = i;
+				swap(number[i], number[i + 1]);
+					shift = i;
 			}
 		}
-		left = k + 1;
-		for (i = left; i < right; i++) //反向部分
+		right = shift;
+		for (i = right - 1; i >= left; i--)
 		{
-			if (a[i] < a[i - 1])
+			if (number[i] > number[i + 1])
 			{
-				tmp = a[i];
-				a[i] = a[i - 1];
-				a[i - 1] = tmp;
-				k = i;
+				swap(number[i], number[i + 1]);
+					shift = i + 1;
 			}
 		}
-		right = k - 1;
-	} while (left <= right);
+		left = shift;
+	}
 	QueryPerformanceCounter(&time_over); //计时结束
 	run_time = 1000000 * (time_over.QuadPart - time_start.QuadPart) / dqFreq;
 	// 乘以1000000把单位由秒化为微秒，精度为1000 000 / （cpu主频）微秒

@@ -42,5 +42,6 @@ RESETMARK1: //数据错误重置位置
 	for (int i = 0; i < arrayNum; i++) {
 		scanf("%lf", &origArray[i]);
 	}
+	getchar();
 	return origArray;
 }
