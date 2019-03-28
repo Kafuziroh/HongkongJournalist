@@ -146,12 +146,20 @@
     <ClInclude Include="MaoPao.h" />
     <ClInclude Include="ReaderFromFiles.h" />
     <ClInclude Include="ReaderFromKeyboard.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Shell.h" />
     <ClInclude Include="ShuangXiangKuaiPai.h" />
     <ClInclude Include="ShuChu.h" />
     <ClInclude Include="ThreeRoadFastSort.h" />
     <ClInclude Include="TimeData.h" />
     <ClInclude Include="TwoWayBubbleSort.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\..\..\Blog\Hexo\source\favicon.ico" />
+    <Image Include="..\DSR CA LOGO.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

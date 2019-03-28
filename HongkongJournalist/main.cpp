@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <fstream>
 #include <ctime>
+#include <stdlib.h>
 //文件处理
 #include "ReaderFromKeyboard.h"
 #include "ReaderFromFiles.h"
@@ -26,6 +27,9 @@ int SIZE_OF_ARRAY = 0; //全局数组大小
 
 int main()
 {
+	system("mode con cols=150 lines=40");
+	system("color 70");
+	system("title=看谁排得快（香港记者）");
 	//标题
 	{
 		cout << "==============================================" << endl;
