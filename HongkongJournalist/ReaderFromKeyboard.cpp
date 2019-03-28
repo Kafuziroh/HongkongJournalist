@@ -40,7 +40,7 @@ RESETMARK1: //数据错误重置位置
 	cout << "请输入需要排序的数据，以半角空格分隔，回车确认：" << endl;
 	double *origArray = new double[arrayNum]; //传递用数据数组
 	for (int i = 0; i < arrayNum; i++) {
-		scanf("%d", &origArray[i]);
+		scanf("%lf", &origArray[i]);
 	}
 	return origArray;
 }
